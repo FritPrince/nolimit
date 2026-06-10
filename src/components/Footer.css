@@ -1,0 +1,116 @@
+.footer {
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 32px;
+}
+
+.footer-kente {
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    #9B6DFF 0px, #9B6DFF 12px,
+    #FF4133 12px, #FF4133 24px,
+    #27C97A 24px, #27C97A 36px,
+    #FF9500 36px, #FF9500 48px
+  );
+  animation: kente-rev 7s linear infinite;
+}
+
+@keyframes kente-rev {
+  from { background-position: 48px 0; }
+  to { background-position: 0 0; }
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 44px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: -0.4px;
+}
+
+.footer-logo-icon {
+  color: var(--amber);
+  filter: drop-shadow(0 0 6px rgba(255, 149, 0, 0.5));
+}
+
+.footer-gold {
+  color: var(--amber);
+}
+
+.footer-text {
+  color: var(--text-dim);
+  font-size: 0.83rem;
+  line-height: 1.65;
+}
+
+.footer-tip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 149, 0, 0.06);
+  border: 1px solid rgba(255, 149, 0, 0.18);
+  border-radius: 4px;
+  padding: 8px 18px;
+  font-size: 0.8rem;
+  color: var(--text-sub);
+}
+
+.footer-tip strong {
+  color: var(--amber);
+}
+
+.footer-proverb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 20px 28px;
+  background: rgba(255, 149, 0, 0.04);
+  border: 1px solid rgba(255, 149, 0, 0.1);
+  border-radius: var(--radius);
+  max-width: 420px;
+}
+
+.proverb-symbol {
+  color: var(--amber);
+  font-size: 1rem;
+  opacity: 0.6;
+}
+
+.footer-proverb em {
+  font-style: italic;
+  font-size: 0.93rem;
+  color: var(--text-sub);
+  text-align: center;
+  line-height: 1.55;
+}
+
+.proverb-origin {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  letter-spacing: 0.6px;
+  font-weight: 500;
+  font-family: 'Barlow', sans-serif;
+}
+
+.footer-copy {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  margin-top: 6px;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.3px;
+}

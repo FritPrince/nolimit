@@ -1,0 +1,102 @@
+.category-section {
+  margin-bottom: 72px;
+  position: relative;
+  counter-increment: section-counter;
+}
+
+/* Ghost counter number in background */
+.category-section::before {
+  position: absolute;
+  top: -28px;
+  right: -8px;
+  font-family: 'Syne', sans-serif;
+  font-size: 9rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.018);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  letter-spacing: -4px;
+}
+
+.category-section:nth-child(1)::before { content: "01"; }
+.category-section:nth-child(2)::before { content: "02"; }
+.category-section:nth-child(3)::before { content: "03"; }
+.category-section:nth-child(4)::before { content: "04"; }
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.category-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius);
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.category-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.category-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-bottom: 3px;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+.category-desc {
+  color: var(--text-sub);
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.category-count {
+  margin-left: auto;
+  padding: 5px 13px;
+  border: 1px solid;
+  border-radius: 4px;
+  font-size: 0.73rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.5px;
+}
+
+.category-divider {
+  height: 1px;
+  margin-bottom: 24px;
+  border-radius: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .category-title { font-size: 1.2rem; }
+  .links-grid { grid-template-columns: 1fr; }
+  .category-count { display: none; }
+  .category-section::before { display: none; }
+}

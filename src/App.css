@@ -1,0 +1,16 @@
+.main {
+  min-height: 100vh;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 32px;
+  counter-reset: section-counter;
+}
+
+@media (max-width: 600px) {
+  .main-content {
+    padding: 32px 16px 24px;
+  }
+}

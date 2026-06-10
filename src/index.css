@@ -1,0 +1,107 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --amber: #FF9500;
+  --amber-bright: #FFC340;
+  --amber-dark: #CC6800;
+  --teal: #00CFAD;
+  --teal-dim: #009B81;
+  --coral: #FF4133;
+  --green: #27C97A;
+  --purple: #9B6DFF;
+
+  --bg: #06080F;
+  --bg-surface: #0C1018;
+  --bg-elevated: #111926;
+  --bg-glass: rgba(12, 16, 24, 0.7);
+
+  --border: rgba(255, 149, 0, 0.1);
+  --border-bright: rgba(255, 149, 0, 0.35);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+
+  --text: #EBF0FA;
+  --text-sub: #7E8BAB;
+  --text-dim: #3A4160;
+
+  --shadow-card: 0 4px 40px rgba(0, 0, 0, 0.65);
+  --shadow-amber: 0 0 40px rgba(255, 149, 0, 0.2);
+
+  --radius: 12px;
+  --radius-sm: 6px;
+  --radius-lg: 24px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Barlow', system-ui, sans-serif;
+  font-weight: 400;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image:
+    radial-gradient(ellipse 70% 55% at 15% 0%, rgba(255, 149, 0, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 45% at 88% 95%, rgba(0, 207, 173, 0.055) 0%, transparent 60%);
+  background-attachment: fixed;
+}
+
+/* Film grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 9998;
+  mix-blend-mode: overlay;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--amber), var(--coral));
+  border-radius: 2px;
+}
