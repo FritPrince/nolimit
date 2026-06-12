@@ -6,11 +6,13 @@ import CategorySection from './components/CategorySection';
 import Footer from './components/Footer';
 import AdBlockerModal from './components/AdBlockerModal';
 import ScrollToTop from './components/ScrollToTop';
+import GradientBackground from './components/GradientBackground';
+
 import './App.css';
 
-const totalLinks = categories.reduce((acc, cat) => acc + cat.links.length, 0);
-
 export default function App() {
+  const totalLinks = categories.reduce((acc, cat) => acc + cat.links.length, 0);
+
   useEffect(() => {
     const els = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(
@@ -23,15 +25,16 @@ export default function App() {
 
   return (
     <>
+      <GradientBackground />
       <AdBlockerModal />
       <Header categories={categories} />
       <main className="main">
         <Hero totalLinks={totalLinks} />
-        <div className="main-content">
-          {categories.map(cat => (
-            <CategorySection key={cat.id} category={cat} />
-          ))}
-        </div>
+          <div className="main-content">
+            {categories.map(cat => (
+              <CategorySection key={cat.id} category={cat} />
+            ))}
+          </div>
       </main>
       <Footer />
       <ScrollToTop />
