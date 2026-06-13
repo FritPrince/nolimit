@@ -9,7 +9,7 @@ A registry has two forms:
 
 - **Source registry**: an authored `registry.json` in a project or repository.
   It may use `include` and file paths that point at source files.
-- **Built registry**: generated JSON files served to CLI consumers, usually
+- **Built registry**: generated JSON files served to CLI consumer, usually
   from `public/r`. Use `npx shadcn@latest build` to create this form.
 
 The CLI installer consumes registry item payloads. A source registry is a way to
