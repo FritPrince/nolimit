@@ -3,7 +3,6 @@ import './Footer.css';
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-kente" />
       <div className="footer-content">
         <div className="footer-logo">
           <span className="footer-logo-icon">◈</span>
@@ -22,7 +21,7 @@ export default function Footer() {
         </p>
 
         <div className="footer-tip">
-          <span className="footer-tip-icon">💡</span>
+          <span className="footer-tip-icon">→</span>
           <span>Astuce : installe <strong>Brave</strong> (mobile) ou <strong>uBlock Origin</strong> (PC) pour 0 pub</span>
         </div>
 
